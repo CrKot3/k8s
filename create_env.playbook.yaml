@@ -9,11 +9,16 @@
 - name: Create K8S resource
   hosts: localhost
   tasks:
-    - name: DB
+    - name: Apply database deployment
       kubernetes.core.k8s:
         apply: true
         namespace: "checha"
-        template: ./db-container2-deployment.yaml
+        template: ./db-deployment.yaml
+    - name: Apply database service
+      kubernetes.core.k8s:
+        apply: true
+        namespace: "checha"
+        template: ./db-service.yaml
     - name: Bot
       kubernetes.core.k8s:
         apply: true
