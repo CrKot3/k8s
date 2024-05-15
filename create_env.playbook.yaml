@@ -13,4 +13,4 @@
       kubernetes.core.k8s:
         apply: true
         namespace: "checha"
-        template: ./task-manager.yaml
+        template: ./task-manager-deployment.yaml
