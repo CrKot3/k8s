@@ -5,8 +5,8 @@ metadata:
     kompose.cmd: kompose convert
     kompose.version: 1.32.0 (765fde254)
   labels:
-    io.kompose.service: db
-  name: db
+    io.kompose.service: db-container2
+  name: db-container2
 spec:
   type: NodePort
   ports:
@@ -14,4 +14,4 @@ spec:
       targetPort: 3306
       nodePort: 31308
   selector:
-    io.kompose.service: db
+    io.kompose.service: db-container2
