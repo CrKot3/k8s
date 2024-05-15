@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-container2-deployment
+  namespace: checha
+  labels:
+    app: db-container2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db-container2
+  template:
+    metadata:
+      labels:
+        app: db-container2
+    spec:
+      containers:
+        - name: db-container2
+          image: crkot3/checha20:db
+          ports:
+            - containerPort: 3306
