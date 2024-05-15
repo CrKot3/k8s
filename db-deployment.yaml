@@ -22,6 +22,9 @@ spec:
         io.kompose.service: db
     spec:
       containers:
+          - env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
           image: crkot3/checha20:db
           name: db
           ports:
