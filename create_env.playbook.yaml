@@ -26,4 +26,9 @@
       kubernetes.core.k8s:
         apply: true
         namespace: "checha"
-        template: ./task-manager-deployment.yaml
+        template: ./tm-deployment.yaml
+    - name: Apply Bot service
+      kubernetes.core.k8s:
+        apply: true
+        namespace: "checha"
+        template: ./tm-service.yaml
