@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-manager-deployment
+  namespace: checha
+  labels:
+    app: tm-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tm-bot
+  template:
+    metadata:
+      labels:
+        app: tm-bot
+    spec:
+      containers:
+        - name: tm-bot
+          image: crkot3/checha20:tgbot
+          ports:
+            - containerPort: 8069
